@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conatct Me</title>
+    <link rel="stylesheet" href="style.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<style>
+
+  .heading{
+    font-size: 3vw;
+     background: linear-gradient(to right, #fff200, #ffbb00, #ffd000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* For better support */
+  background-clip: text;
+  color: transparent;
+    text-align: center;
+    margin: 8vh 3vw;
+
+  }
+  .Contact{
+display: flex;
+color: white;
+  }
+  .contact_left{
+    margin: 2vh 5vw;
+    width: 35%;
+  }
+  .contact_left h1{
+    text-transform: uppercase;
+  }
+  .contact_left span{
+    color: #fbbf24;
+    font-size: 1.5vw;
+  }
+  .contact_right{
+width: 65%;
+padding-left:  10vw;
+  }
+  .contact_right h2{
+    font-size: 1.4vw;
+  }
+  .contact_right input{
+    padding: 2vh 1vw;
+    margin: 5vh 0;
+    width: 100%;
+    border: 1px solid rgb(220, 215, 215);
+    background-color: black;
+    color: white;
+  }
+
+  /*Form design*/
+  .floating-form {
+  width: 100%;
+  max-width: 500px;
+  padding: 0px 30px;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 16px;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  border-image: linear-gradient(to right, #facc15, #fde68a) 1;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 10px rgba(250, 204, 21, 0.3);
+}
+
+label {
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  color: #facc15;
+  font-size: 16px;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+/* Floating label effect */
+input:focus + label,
+input:valid + label,
+textarea:focus + label,
+textarea:valid + label {
+  top: -12px;
+  left: 12px;
+  background-color: #111;
+  padding: 0 6px;
+  font-size: 12px;
+  color: #fde68a;
+}
+
+button {
+  padding: 12px 20px;
+  font-size: 16px;
+  background: linear-gradient(to right, #facc15, #fbbf24);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: black;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(to right, #fbbf24, #facc15);
+  box-shadow: 0 0 10px rgba(250, 204, 21, 0.5);
+}
+
+/*Background ballon*/
+.gradient-circle {
+  position: absolute;
+  z-index: 1;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, #facc15, #fde68a, transparent);
+  transform: translateX(-50%);
+  filter: blur(100px);
+  border-radius: 50%;
+  opacity: 0.3;
+}
+
+@media (max-width: 768px) {
+  .Contact {
+    flex-direction: column;
+    padding: 5vh 5vw;
+    gap: 5vh;
+  }
+
+  .contact_left,
+  .contact_right {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+  }
+
+  .contact_left h1 {
+    font-size: 6vw;
+  }
+
+  .contact_left span {
+    font-size: 4.5vw;
+  }
+
+  .contact_right {
+    padding-left: 0;
+  }
+
+  .contact_right h2 {
+    font-size: 5vw;
+  }
+
+  .floating-form {
+    padding: 0 10px;
+    max-width: 100%;
+  }
+
+  input,
+  textarea {
+    font-size: 14px;
+  }
+
+  label {
+    font-size: 14px;
+  }
+
+  input:focus + label,
+  input:valid + label,
+  textarea:focus + label,
+  textarea:valid + label {
+    font-size: 12px;
+    top: -10px;
+  }
+
+  button {
+    width: 100%;
+    font-size: 1rem;
+    padding: 10px 0;
+  }
+
+  .gradient-circle {
+    top: -40px;
+    left: 50%;
+    width: 120px;
+    height: 120px;
+    filter: blur(60px);
+  }
+}
+
+</style>
+<body>
+   <div id="mouseFollower">
+  <div class="outer">
+    <div class="inner"></div>
+  </div>
+  </div>
+<nav class="navbar">
+  <div class="logo">AB Dev</div>
+  <div class="menu-toggle" id="menu-toggle">&#9776;</div> <!-- Hamburger icon -->
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="Projects.html">Projects</a></li>
+    <li><a href="About.html">About</a></li>
+    <li><a href="Contact.html">Contact</a></li>
+  </ul>
+</nav>
+<h1 class="heading">Contact me </h1>
+ <div class="Contact">
+   <div class="contact_left">
+     <div class="gradient-circle"></div>
+    <h1>Lets Create something <span>Amazing together</span></h1>
+   </div>
+   <div class="contact_right">
+    <form class="floating-form" action="https://formspree.io/f/xblkjprk" method="POST">
+  <div class="form-group">
+    <input type="text" id="name" name="name" required />
+    <label for="name">Name</label>
+  </div>
+
+  <div class="form-group">
+    <input type="email" id="email" name="email" required />
+    <label for="email">Email</label>
+  </div>
+
+  <div class="form-group">
+    <textarea id="message" name="message" required></textarea>
+    <label for="message">Message</label>
+  </div>
+
+  <button type="submit">Send Message</button>
+</form>
+
+</div>
+    </div>
+  <!-- last section-->
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-left">
+      <h2>Abdul Basit</h2>
+      <p>Building digital experiences through code and creativity.</p>
+    </div>
+
+    <div class="footer-center">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Projects.html">Projects</a></li>
+        <li><a href="About.html">About</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-right">
+      <h3>Connect</h3>
+      <div class="social-icons" >
+        <a href="#"><i class="fa-brands fa-github"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-envelope"></i></a>
+      </div>
+      <p>Email: <a href="mailto:basid1496@gmail.com">basid1496@gmail.com</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Abdul Basit. All rights reserved.</p>
+  </div>
+</footer>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="script.js"></script>
+<script>
+  const form = document.querySelector(".floating-form");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+      method: "POST",
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    }).then(response => {
+      if (response.ok) {
+        alert(" Message sent successfully!");
+        form.reset();
+      } else {
+        alert(" Failed to send message. Try again.");
+      }
+    }).catch(error => {
+      alert(" Something went wrong.");
+    });
+  });
+
+
+    gsap.registerPlugin(ScrollTrigger);
+
+  // Animate "Contact me" Heading
+  gsap.from(".heading", {
+    scrollTrigger: {
+      trigger: ".heading",
+      start: "top 90%",
+    },
+    opacity: 0,
+    y: 50,
+    duration: 1,
+  });
+
+  // Animate Contact Section (whole)
+  gsap.from(".Contact", {
+    scrollTrigger: {
+      trigger: ".Contact",
+      start: "top 85%",
+    },
+    opacity: 0,
+    y: 100,
+    duration: 1,
+    ease: "power3.out",
+  });
+
+  // Animate Left Text
+  gsap.from(".contact_left h1", {
+    scrollTrigger: {
+      trigger: ".Contact",
+      start: "top 85%",
+    },
+    opacity: 0,
+    x: -100,
+    duration: 1,
+    delay: 0.3
+  });
+
+  // Animate Span inside Left
+  gsap.from(".contact_left span", {
+    scrollTrigger: {
+      trigger: ".Contact",
+      start: "top 85%",
+    },
+    opacity: 0,
+    x: -50,
+    duration: 1,
+    delay: 0.6
+  });
+
+  // Animate Right Side Form Inputs Staggered
+  gsap.from(".floating-form .form-group", {
+    scrollTrigger: {
+      trigger: ".floating-form",
+      start: "top 90%",
+    },
+    opacity: 0,
+    y: 50,
+    stagger: 0.2,
+    duration: 0.7,
+    ease: "power2.out"
+  });
+
+  // Animate Submit Button
+  gsap.from(".floating-form button", {
+    scrollTrigger: {
+      trigger: ".floating-form",
+      start: "top 90%",
+    },
+    opacity: 0,
+    scale: 0.8,
+    duration: 0.6,
+    delay: 0.6
+  });
+</script>
+</body>
+</html>

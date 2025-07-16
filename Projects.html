@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdul Basit Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<style>
+ #hero {
+  padding: 60px 20px;
+  background: #000000;
+  text-align: center;
+}
+.type-title{
+  white-space: nowrap;
+  overflow: hidden;
+  min-height: 2rem;
+}
+.slider-wrapper {
+  overflow: hidden;
+  width: 90%;
+  margin: auto;
+  border-radius: 15px;
+  background: rgb(6, 6, 6);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.5s ease;
+  margin-top: 5vh;
+}
+
+.box {
+  width: 250px;
+  height: 400px;
+  margin: 20px;
+  /* background: linear-gradient(to right, #facc15, #fcd34d); */
+  font-size: 1.5rem;
+  border-radius: 10px;
+  flex-shrink: 0;
+  border:1px solid #adaca8;
+  background: rgba(84, 83, 81, 0.1);
+  backdrop-filter: blur(10px);
+  color: white;
+   overflow: hidden;
+}
+.box:hover {
+  background: rgba(252, 202, 0, 0.705); /* semi-transparent */
+  border: 2px solid orange;
+  box-shadow: 0 0 15px orange;
+  *{
+  color: rgb(0, 0, 0);
+  }  
+}
+
+.controls {
+  margin-top: 20px;
+}
+
+.controls button {
+  padding: 10px 15px;
+  font-size: 18px;
+  background: #facc15;
+  border: none;
+  border-radius: 8px;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.controls button:hover {
+  background: #fcd34d;
+}
+.box h2{
+ padding: 2vh 2vw;
+ font-size: 1.5vw;
+}
+.box p{
+ padding: 4vh 2vw;
+ font-size: 1vw;
+}
+.img_box{
+  height: 50%;
+  margin: 1vh ;
+}
+.img_box1{
+ background-image: url(img/download.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.img_box2{
+   background-image: url(img/download\ \(1\).jpeg);
+    background-size: cover;
+  background-repeat: no-repeat;
+}
+.img_box3{
+   background-image: url(img/studentmanagementsystem.jpeg);
+    background-size: cover;
+  background-repeat: no-repeat;
+}
+.img_box4{
+   background-image: url(img/webscraper.png);
+    background-size: cover;
+  background-repeat: no-repeat;
+   
+}
+#hero>h1{
+  font-size: 2vw;
+  color: #facc15;
+
+}
+  </style>
+<body>
+  <div id="mouseFollower">
+  <div class="outer">
+    <div class="inner"></div>
+  </div>
+</div>
+<nav class="navbar">
+  <div class="logo">AB Dev</div>
+  <div class="menu-toggle" id="menu-toggle">&#9776;</div> <!-- Hamburger icon -->
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="Projects.html">Projects</a></li>
+    <li><a href="About.html">About</a></li>
+    <li><a href="Contact.html">Contact</a></li>
+  </ul>
+</nav>
+<!-- slider content -->
+
+<section id="hero">
+  <h1 class="type-title"></h1>
+  <div class="slider-wrapper">
+    <div class="slider-track" id="sliderTrack">
+      <div class="box">
+        <div class="img_box img_box1">
+          
+        </div>
+        <h2>Website cloned</h2>
+        <p>A pixel-perfect clone of a modern website, rebuilt using clean HTML, CSS, and JavaScript to sharpen my front-end skills.</p>
+      </div>
+      <div class="box">
+         <div class="img_box img_box2">
+          
+        </div>
+        <h2>Snake and Ladder</h2>
+        <p>A classic Snake and Ladder game built with C++ featuring two-player mode and dice-based gameplay logic</p>
+      </div>
+      <div class="box">
+         <div class="img_box img_box3">
+          
+        </div>
+        <h2 style="font-size: 1.3vw;">Management System</h2>
+        <p>A console-based Student Management System in C++ to add, update, delete, and view student records efficiently. </p>
+      </div>
+      <div class="box"> 
+        <div class="img_box img_box4">
+          
+        </div>
+        <h2>webscraper</h2>
+        <p>An automated LinkedIn web scraper using Python and Selenium to extract filtered profile data for analysis.</p></div>
+      <!-- Clone of the boxes -->
+      <div class="box">
+         <div class="img_box img_box1">
+          
+        </div>
+        <h2>Website cloned</h2>
+        <p>I have cloned a website called PK Gift Shop as a project</p>
+      </div>
+      <div class="box">
+         <div class="img_box img_box2">
+          
+        </div>
+        <h2>Snake and Ladder</h2>
+        <p>I have cloned a website called PK Gift Shop as a project</p>
+      </div>
+      <div class="box">
+         <div class="img_box img_box3">
+          
+        </div>
+        <h2>Management System</h2>
+        <p>I have cloned a website called PK Gift Shop as a project</p>
+      </div>
+      <div class="box">
+         <div class="img_box img_box4">
+          
+        </div>
+        <h2>webscraper</h2>
+        <p>I have cloned a website called PK Gift Shop as a project</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <button onclick="scrollLeft()">←</button>
+    <button onclick="scrollRight()">→</button>
+  </div>
+</section>
+
+
+  <!-- last section-->
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-left">
+      <h2>Abdul Basit</h2>
+      <p>Building digital experiences through code and creativity.</p>
+    </div>
+
+    <div class="footer-center">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Projects.html">Projects</a></li>
+        <li><a href="About.html">About</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-right">
+      <h3>Connect</h3>
+      <div class="social-icons">
+        <a href="#"><i class="fa-brands fa-github"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-envelope"></i></a>
+      </div>
+      <p>Email: <a href="mailto:basid1496@gmail.com">basid1496@gmail.com</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Abdul Basit. All rights reserved.</p>
+  </div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+<script src="script.js"></script>
+<script >
+  const slider = document.getElementById('sliderTrack');
+  const boxes = document.querySelectorAll('.box');
+  const boxWidth = boxes[0].offsetWidth + 40; // width + margin
+  let position = 0;
+
+  function scrollRight() {
+    position += boxWidth;
+
+    slider.style.transition = 'transform 0.5s ease';
+    slider.style.transform = `translateX(-${position}px)`;
+
+    // Check if we've reached end of original set (4 boxes)
+    if (position >= boxWidth * 4) {
+      setTimeout(() => {
+        // Instantly jump to clone start
+        slider.style.transition = 'none';
+        position = 0;
+        slider.style.transform = `translateX(0px)`;
+      }, 500); // after transition ends
+    }
+  }
+
+  function scrollLeft() {
+    if (position === 0) {
+      // Jump to end of clones before animating back
+      position = boxWidth * 4;
+      slider.style.transition = 'none';
+      slider.style.transform = `translateX(-${position}px)`;
+      setTimeout(() => {
+        position -= boxWidth;
+        slider.style.transition = 'transform 0.5s ease';
+        slider.style.transform = `translateX(-${position}px)`;
+      }, 20);
+    } else {
+      position -= boxWidth;
+      slider.style.transition = 'transform 0.5s ease';
+      slider.style.transform = `translateX(-${position}px)`;
+    }
+  }
+  gsap.registerPlugin(TextPlugin, ScrollTrigger);
+
+// Clear text initially
+document.querySelector(".type-title").textContent = "";
+
+// Typing animation
+gsap.to(".type-title", {
+  scrollTrigger: {
+    trigger: ".type-title",
+    start: "top 80%",
+    toggleActions: "play reverse play reverse",
+       // Set true to debug
+  },
+  repeat: -1,     
+  yoyo: true,     
+  repeatDelay: 1,
+  duration: 2,
+  text: "My Projects",
+  ease: "power1.inOut"
+});
+
+// Force ScrollTrigger to re-calculate on load
+ScrollTrigger.refresh();
+</script> 
+</body>
+</html>

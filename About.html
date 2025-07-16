@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdul Basit Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-yada...==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<style>
+  *{
+    color: white;
+  }
+
+  .about{
+    display: flex;
+       border-bottom:1px solid #ffd000;
+    margin: 0 5vw;
+
+  }
+
+  .about_right{
+    width: 65%;
+    padding: 15vh 4vw;
+  }
+  .about_left{
+    width: 35%;
+    padding: 15vh 4vw;
+  }
+  .about_right p{
+    margin:3vh 1vw ;
+    line-height: 4vh;
+  }
+  .skills{
+    margin: 3vh 0;
+  }
+
+ .heptagon {
+  width: 200px;
+  height: 200px;
+background-image: url(img/IMG_0029.jpg);
+background-repeat: no-repeat;
+background-size: cover;  
+border: 1px solid rgb(120, 116, 116);
+clip-path: polygon(
+    50% 0%, 
+    90% 20%, 
+    100% 60%, 
+    75% 100%, 
+    25% 100%, 
+    0% 60%, 
+    10% 20%
+  );
+  margin: 50px auto;
+}
+.heptagon_border {
+  width: 205px;
+  height: 205px;
+       background: linear-gradient(to right, #fff200, #ffea00, #ffd000);
+ /* Border color */
+  clip-path: polygon(
+    50% 0%, 90% 20%, 100% 60%, 75% 100%,
+    25% 100%, 0% 60%, 10% 20%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 768px) {
+  .about {
+    flex-direction: column;
+    margin: 0 4vw;
+  }
+
+  .about_left,
+  .about_right {
+    width: 100%;
+    padding: 6vh 4vw;
+    text-align: center;
+  }
+
+  .about_right p {
+    margin: 3vh 0;
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+
+  .heptagon_border {
+    width: 160px;
+    height: 160px;
+    margin: 0 auto;
+  }
+
+  .heptagon {
+    width: 150px;
+    height: 150px;
+    background-size: cover;
+  }
+
+  .about_right h1 {
+    font-size: 6vw;
+    margin-bottom: 2vh;
+  }
+
+  .skills {
+    font-size: 5vw;
+    margin-top: 4vh;
+  }
+
+  .tech-list.skills {
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+    flex-wrap: wrap;
+  }
+
+  .tech-list.skills li i {
+    font-size: 30px;
+  }
+
+  .tech-list.skills li p {
+    font-size: 0.85rem;
+  }
+}
+
+
+
+/*Section2 About*/
+.about_section2 h1{
+  text-align: center;
+  margin: 4vh 0 ;
+}
+.about_section2>p{
+  text-align: center;
+  margin: 6vh 0 ;
+word-spacing: 1vw;
+text-transform: uppercase;
+}
+
+.type-title{
+  white-space: nowrap;
+  overflow: hidden;
+  min-height: 3rem;
+}
+/*slider code */
+
+
+.slide-box i{
+font-size: 2.5vw;
+}
+.slide-box h1{
+font-size: 1.5vw;
+}
+.slide-box p{
+font-size: 1vw;
+line-height: 1.5vw;
+margin: 0 1vw;
+}
+
+.slide-box:hover {
+  background: rgba(252, 202, 0, 0.705); /* semi-transparent */
+  border: 2px solid orange;
+  box-shadow: 0 0 15px orange;
+  *{
+  color: rgb(0, 0, 0);
+  }  
+}
+
+.slider-container {
+  max-width: 1000px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.slider-track {
+  display: flex;
+  overflow-x: hidden;       /*  Critical */
+  scroll-behavior: smooth;
+  
+}
+
+.slide-box {
+  width: 200px;
+  height: 300px;
+  margin-right: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border: 2px solid rgba(255, 254, 254, 0.2);
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+  flex-shrink: 0;
+  padding: 8vh 0;
+}
+
+.nav-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+button {
+  margin: 5vh 0;
+  padding: 10px 20px;
+  background: orange;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .about_section2 h1 {
+    font-size: 6vw;
+  }
+
+  .about_section2 > p {
+    font-size: 3.5vw;
+    word-spacing: 2vw;
+  }
+
+  .type-title {
+    font-size: 5vw;
+    min-height: 2.5rem;
+  }
+
+  .slider-container {
+    max-width: 100%;
+    padding: 0 4vw;
+  }
+
+  .slider-track {
+    gap: 10px;
+  }
+
+  .slide-box {
+    width: 80vw;
+    height: auto;
+    padding: 5vh 2vw;
+    margin-right: 15px;
+    font-size: 1.2rem;
+  }
+
+  .slide-box i {
+    font-size: 10vw;
+    margin-bottom: 10px;
+  }
+
+  .slide-box h1 {
+    font-size: 5vw;
+  }
+
+  .slide-box p {
+    font-size: 3.5vw;
+    line-height: 1.5;
+    margin: 1vh 2vw;
+  }
+
+  .nav-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-buttons button {
+    width: 80%;
+    font-size: 1rem;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 10px;
+  }
+}
+
+
+</style>
+<body>
+   <div id="mouseFollower">
+  <div class="outer">
+    <div class="inner"></div>
+  </div>
+</div>
+ <nav class="navbar">
+  <div class="logo">AB Dev</div>
+  <div class="menu-toggle" id="menu-toggle">&#9776;</div> <!-- Hamburger icon -->
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="Projects.html">Projects</a></li>
+    <li><a href="About.html">About</a></li>
+    <li><a href="Contact.html">Contact</a></li>
+  </ul>
+</nav>
+</nav>
+    <div class="about">
+        <div class="about_left">
+          <div class="heptagon_border">
+            <div class="heptagon">
+            </div>
+          </div>
+        </div>
+        <div class="about_right">
+          <h1>About me</h1>
+          <p>Welcome to my portfolio, I am Abdul Basit a passionate Full Stack Developer with a passion for building end-to-end web applications. I specialize in creating responsive front-end designs with HTML, CSS, and JavaScript, and developing powerful back-end systems using python, flask, and django. I love solving real-world problems through code and continuously expanding my skills.</p>
+        
+        <p>My goal is to develop seamless digital experiences that are both user-friendly and efficient under the hood. I’m always eager to learn new technologies, contribute to meaningful projects, and grow as a developer. I aim to turn ideas into scalable and impactful web solutions.</p>
+<p>I am deeply commited to my work,investing creativityand precision into every project to ensure a unique and effective user experience </p>
+<h2 class="skills">SKills </h2>
+<ul class="tech-list skills">
+  <li>
+    <i class="fa-brands fa-html5"></i>
+    <p>HTML5</p>
+  </li>
+  <li>
+    <i class="fa-brands fa-css3-alt"></i>
+    <p>CSS3</p>
+  </li>
+  <li>
+    <i class="fa-brands fa-js"></i>
+    <p>JavaScript</p>
+  </li>
+  <li>
+    <i class="fa-brands fa-python"></i>
+    <p>Python</p>
+  </li>
+  <li>
+    <i class="fa-brands fa-docker"></i>
+    <p>Docker</p>
+  </li>
+  <li>
+    <i class="fa-solid fa-database"></i>
+    <p>Database</p>
+  </li>
+  <li>
+    <i class="fa-brands fa-linux"></i>
+    <p>Linux</p>
+  </li>
+</ul>
+        </div>
+      </div>
+ <div class="about_section2">
+<h1 class="type-title"></h1>
+<p class="service">Services that i gave?</p>
+
+<!-- slider code -->
+
+
+<div class="slider-container">
+    <div class="slider-track" id="slider">
+      <div class="slide-box">
+        <i class="fa-brands fa-chrome"></i>
+        <h1>Website</h1>
+        <p>I build modern, responsive websites that bring your ideas to life.</p>
+      </div>
+      <div class="slide-box">
+        <i class="fa-solid fa-desktop"></i>
+        <h1>Web App</h1>
+        <p>I build modern, responsive websites that bring your ideas to life.</p>
+      </div>
+      <div class="slide-box">
+       <i class="fa-solid fa-spider"></i>
+        <h1>Web Scrapper</h1>
+        <p>I create automated web scrapers that extract structured data from websites.  </p>
+      </div>
+      <div class="slide-box">
+        <i class="fa-solid fa-file-lines"></i>
+        <h1>Automation software</h1>
+        <p>I build modern, responsive websites that bring your ideas to life.</p>
+      </div>
+      <div class="slide-box">
+        <i class="fa-brands fa-chrome"></i>
+        <h1>Website</h1>
+        <p>I build modern, responsive websites that bring your ideas to life.</p>
+      </div>
+      <div class="slide-box">
+        <i class="fa-brands fa-chrome"></i>
+        <h1>Website</h1>
+        <p>I build modern, responsive websites that bring your ideas to life.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <button id="prev">Back</button>
+    <button id="next">Next</button>
+  </div>
+    </div>
+  <!-- last section-->
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-left">
+      <h2>Abdul Basit</h2>
+      <p>Building digital experiences through code and creativity.</p>
+    </div>
+
+    <div class="footer-center">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Projects.html">Projects</a></li>
+        <li><a href="About.html">About</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-right">
+      <h3>Connect</h3>
+      <div class="social-icons">
+        <a href="#"><i class="fa-brands fa-github"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-envelope"></i></a>
+      </div>
+      <p>Email: <a href="mailto:basid1496@gmail.com">basid1496@gmail.com</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Abdul Basit. All rights reserved.</p>
+  </div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+<script src="script.js"></script>
+ <script>
+ document.addEventListener("DOMContentLoaded", () => {
+    const slider = document.getElementById("slider");
+    const next = document.getElementById("next");
+    const prev = document.getElementById("prev");
+
+    let scrollAmount = 0;
+    const scrollStep = 220; // 200px box + 20px margin
+
+    next.addEventListener("click", () => {
+      scrollAmount += scrollStep;
+      slider.scrollTo({
+        left: scrollAmount,
+        behavior: "smooth"
+      });
+    });
+
+    prev.addEventListener("click", () => {
+      scrollAmount -= scrollStep;
+      if (scrollAmount < 0) scrollAmount = 0;
+      slider.scrollTo({
+        left: scrollAmount,
+        behavior: "smooth"
+      });
+    });
+  });
+
+
+gsap.registerPlugin(TextPlugin, ScrollTrigger);
+
+// Clear text initially
+document.querySelector(".type-title").textContent = "";
+
+// Typing animation
+gsap.to(".type-title", {
+  scrollTrigger: {
+    trigger: ".type-title",
+    start: "top 80%",
+    toggleActions: "play reverse play reverse",
+       // Set true to debug
+  },
+  repeat: -1,     
+  yoyo: true,     
+  repeatDelay: 1,
+  duration: 2,
+  text: "Services",
+  ease: "power1.inOut"
+});
+
+// Force ScrollTrigger to re-calculate on load
+ScrollTrigger.refresh();
+
+
+/*slider animation */
+var ani = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".slider-container",
+    scroller: "body",
+    start: "top 150%",
+    end: "top 10%",
+    scrub:0.5,
+  }
+});
+ani.from(".slider-container", {
+  y: 300,
+  opacity: 0,
+  duration: 1,
+});
+ani.from(".nav-buttons", {
+  opacity: 0,
+  duration: 1,
+});
+ani.from(".service",{
+opacity:0,
+duration:1
+},"0")
+    </script>
+</body>
+</html>
