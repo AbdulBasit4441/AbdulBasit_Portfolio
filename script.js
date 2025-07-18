@@ -117,15 +117,35 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
   /*Project page animation */
+document.querySelector(".type-title").textContent = "";
+
+// Typing animation
+tl.to(".type-title", {
+  scrollTrigger: {
+    trigger: ".type-title",
+    start: "top 80%",
+    toggleActions: "play reverse play reverse",
+       // Set true to debug
+  },
+  repeat: -1,     
+  yoyo: true,     
+  repeatDelay: 1,
+  duration: 2,
+  text: "My Projects",
+  ease: "power1.inOut"
+},"ab");
+
+// Force ScrollTrigger to re-calculate on load
+ScrollTrigger.refresh();
 tl.from(".slider-wrapper ",{
 y:100,
-duration:1,
+duration:0.6,
 opacity:0,
-})
+},"ab")
 tl.from(".controls",{
 opacity:0,
-duration:1,
-})
+duration:0.6,
+},"ab")
 /*Project page end*/
 }
 
@@ -147,7 +167,7 @@ stagger: 0.2
 tl.from(".about_left ",{
 x:-100,
 opacity:0,
-duration:1,
+duration:0.6,
 },"sath")
 tl.from(".about_right ",{
 x:100,
@@ -158,20 +178,20 @@ duration:0.5,
 tl.from(".left ",{
 x:-100,
 opacity:0,
-duration:1,
+duration:0.6,
 stagger:0.3
 })
 tl.from(".cta-buttons",{
 opacity:0,
-duration:1,
+duration:0.6,
 })
 tl.from(".logos",{
 opacity:0,
-duration:1,
+duration:0.6,
 })
 tl.from(".right",{
 opacity:0,
-duration:1,
+duration:0.6,
 },"-=1")
 
 /*section3 */
@@ -182,7 +202,7 @@ ScrollTrigger.matchMedia({
     gsap.from(".left_section", {
       x: -100,
       opacity: 0,
-      duration: 1,
+      duration: 0.6,
       scrollTrigger: {
         trigger: ".section2",
         start: "top 80%",
@@ -193,7 +213,7 @@ ScrollTrigger.matchMedia({
     gsap.from(".right_section", {
       x: 100,
       opacity: 0,
-      duration: 1,
+      duration: 0.6,
       scrollTrigger: {
         trigger: ".section2",
         start: "top 80%",
@@ -208,7 +228,7 @@ ScrollTrigger.matchMedia({
       x: 0,
       opacity: 0,
       y: 100,
-      duration: 1,
+      duration: 0.6,
       scrollTrigger: {
         trigger: ".left_section",
         start: "top 90%",
@@ -220,7 +240,7 @@ ScrollTrigger.matchMedia({
       x: 0,
       opacity: 0,
       y: 100,
-      duration: 1,
+      duration: 0.6,
       scrollTrigger: {
         trigger: ".right_section",
         start: "top 90%",
@@ -243,12 +263,12 @@ var tl3 = gsap.timeline({
 tl3.from(".section3 .section3_left",{
  x: -300,
   opacity: 0,
-  duration: 1
+  duration: 0.6
 },"RL")
 tl3.from(".section3 .section3_right",{
  x: 300,
   opacity: 0,
-  duration: 1
+  duration: 0.6
 },"RL")
 
 var tl4 = gsap.timeline({
@@ -262,7 +282,7 @@ var tl4 = gsap.timeline({
 })
 tl4.from(".section4",{
 opacity:0,
-duration:1,
+duration:0.6,
 })
 var tl5 = gsap.timeline({
   scrollTrigger: {
@@ -275,11 +295,11 @@ var tl5 = gsap.timeline({
 });
 tl5.from(".certification .box1",{
   opacity: 0,
-  duration: 1
+  duration: 0.6
 },"B")
 tl5.from(".certification .box2",{
   opacity: 0,
-  duration: 1
+  duration: 0.6
 },"B")
 
 

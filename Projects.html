@@ -16,7 +16,7 @@
 .type-title{
   white-space: nowrap;
   overflow: hidden;
-  min-height: 2rem;
+  min-height: 60px;
 }
 .slider-wrapper {
   overflow: hidden;
@@ -67,7 +67,7 @@
   background: #facc15;
   border: none;
   border-radius: 8px;
-  margin: 0 10px;
+  margin:  10px;
   cursor: pointer;
   transition: 0.3s;
 }
@@ -112,6 +112,33 @@
   font-size: 2vw;
   color: #facc15;
 
+}
+@media (max-width: 768px) {
+  .box h2{
+    font-size: 4vw;
+  }
+  .box p{
+    font-size: 3vw;
+  }
+
+  .nav-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-buttons button {
+    width: 80%;
+    font-size: 1rem;
+
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 10px;
+  }
+  #hero>h1{
+    font-size: 5vw;
+  }
 }
   </style>
 <body>
@@ -196,7 +223,7 @@
   </div>
 
   <div class="controls">
-    <button onclick="scrollLeft()">←</button>
+    <button class="nav-buttons" onclick="scrollLeft()">←</button>
     <button onclick="scrollRight()">→</button>
   </div>
 </section>
@@ -240,46 +267,45 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
 <script src="script.js"></script>
 <script >
-  const slider = document.getElementById('sliderTrack');
-  const boxes = document.querySelectorAll('.box');
-  const boxWidth = boxes[0].offsetWidth + 40; // width + margin
-  let position = 0;
+ const slider = document.getElementById('sliderTrack');
+const boxes = document.querySelectorAll('.box');
+const originalLength = boxes.length / 3; // original set, assuming 4 originals + 4 start clones + 4 end clones
+let boxWidth = boxes[0].offsetWidth + 40;
+let position = boxWidth * originalLength; // Start in the middle (after start clones)
 
-  function scrollRight() {
-    position += boxWidth;
+// Initial position
+slider.style.transform = `translateX(-${position}px)`;
 
-    slider.style.transition = 'transform 0.5s ease';
-    slider.style.transform = `translateX(-${position}px)`;
+function scrollRight() {
+  position += boxWidth;
+  slider.style.transition = 'transform 0.5s ease';
+  slider.style.transform = `translateX(-${position}px)`;
 
-    // Check if we've reached end of original set (4 boxes)
-    if (position >= boxWidth * 4) {
-      setTimeout(() => {
-        // Instantly jump to clone start
-        slider.style.transition = 'none';
-        position = 0;
-        slider.style.transform = `translateX(0px)`;
-      }, 500); // after transition ends
-    }
-  }
-
-  function scrollLeft() {
-    if (position === 0) {
-      // Jump to end of clones before animating back
-      position = boxWidth * 4;
+  if (position >= boxWidth * (originalLength * 2)) {
+    // If we're at the end of clones
+    setTimeout(() => {
       slider.style.transition = 'none';
+      position = boxWidth * originalLength; // Reset to middle
       slider.style.transform = `translateX(-${position}px)`;
-      setTimeout(() => {
-        position -= boxWidth;
-        slider.style.transition = 'transform 0.5s ease';
-        slider.style.transform = `translateX(-${position}px)`;
-      }, 20);
-    } else {
-      position -= boxWidth;
-      slider.style.transition = 'transform 0.5s ease';
-      slider.style.transform = `translateX(-${position}px)`;
-    }
+    }, 500);
   }
-  gsap.registerPlugin(TextPlugin, ScrollTrigger);
+}
+
+function scrollLeft() {
+  position -= boxWidth;
+  slider.style.transition = 'transform 0.5s ease';
+  slider.style.transform = `translateX(-${position}px)`;
+
+  if (position < boxWidth) {
+    // If we're at the start clones
+    setTimeout(() => {
+      slider.style.transition = 'none';
+      position = boxWidth * originalLength;
+      slider.style.transform = `translateX(-${position}px)`;
+    }, 500);
+  }
+}
+
 
 // Clear text initially
 document.querySelector(".type-title").textContent = "";
