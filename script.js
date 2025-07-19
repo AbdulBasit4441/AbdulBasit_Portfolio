@@ -305,6 +305,18 @@ tl5.from(".certification .box2",{
 
 
 }
+setTimeout(() => {
+      
+  tl6 = gsap.timeline();
+tl6.to(".loader ",{
+          duration:0.7,
+          y:-1000,
+          display:"none"
+          })
+
+    }, 2000); // change to 10000 for 10 seconds
+
 
 animation();
 project();
+

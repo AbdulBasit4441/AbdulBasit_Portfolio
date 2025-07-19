@@ -183,7 +183,7 @@ margin: 0 1vw;
 .slide-box {
   width: 200px;
   height: 300px;
-  margin-right: 20px;
+  margin: 20px;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   border-radius: 10px;
@@ -195,23 +195,6 @@ margin: 0 1vw;
   padding: 8vh 0;
 }
 
-.nav-buttons {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-button {
-  margin: 5vh 0;
-  padding: 10px 20px;
-  background: orange;
-  border: none;
-  color: white;
-  font-size: 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-}
 
 @media (max-width: 768px) {
   .about_section2 h1 {
@@ -260,20 +243,7 @@ button {
     margin: 1vh 2vw;
   }
 
-  .nav-buttons {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .nav-buttons button {
-    width: 80%;
-    font-size: 1rem;
-  }
-
-  button {
-    font-size: 1rem;
-    padding: 10px;
-  }
+  
 }
 
 
@@ -370,22 +340,7 @@ button {
         <h1>Automation software</h1>
         <p>I build modern, responsive websites that bring your ideas to life.</p>
       </div>
-      <div class="slide-box">
-        <i class="fa-brands fa-chrome"></i>
-        <h1>Website</h1>
-        <p>I build modern, responsive websites that bring your ideas to life.</p>
-      </div>
-      <div class="slide-box">
-        <i class="fa-brands fa-chrome"></i>
-        <h1>Website</h1>
-        <p>I build modern, responsive websites that bring your ideas to life.</p>
-      </div>
     </div>
-  </div>
-
-  <div class="nav-buttons">
-    <button id="prev">Back</button>
-    <button id="next">Next</button>
   </div>
     </div>
   <!-- last section-->
@@ -409,10 +364,10 @@ button {
     <div class="footer-right">
       <h3>Connect</h3>
       <div class="social-icons">
-        <a href="#"><i class="fa-brands fa-github"></i></a>
-        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#"><i class="fa-brands fa-envelope"></i></a>
+         <a href="https://github.com/AbdulBasit4441"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/abdul-basit-146476329/"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/itx_ab23/"><i class="fa-brands fa-instagram"></i></a>
+        <a href="mailto:basid1496@gmail.com"><i class="fa-brands fa-envelope"></i></a>
       </div>
       <p>Email: <a href="mailto:basid1496@gmail.com">basid1496@gmail.com</a></p>
     </div>
@@ -426,34 +381,6 @@ button {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
 <script src="script.js"></script>
  <script>
- document.addEventListener("DOMContentLoaded", () => {
-    const slider = document.getElementById("slider");
-    const next = document.getElementById("next");
-    const prev = document.getElementById("prev");
-
-    let scrollAmount = 0;
-    const scrollStep = 220; // 200px box + 20px margin
-
-    next.addEventListener("click", () => {
-      scrollAmount += scrollStep;
-      slider.scrollTo({
-        left: scrollAmount,
-        behavior: "smooth"
-      });
-    });
-
-    prev.addEventListener("click", () => {
-      scrollAmount -= scrollStep;
-      if (scrollAmount < 0) scrollAmount = 0;
-      slider.scrollTo({
-        left: scrollAmount,
-        behavior: "smooth"
-      });
-    });
-  });
-
-
-gsap.registerPlugin(TextPlugin, ScrollTrigger);
 
 // Clear text initially
 document.querySelector(".type-title").textContent = "";
@@ -490,10 +417,6 @@ var ani = gsap.timeline({
 });
 ani.from(".slider-container", {
   y: 300,
-  opacity: 0,
-  duration: 1,
-});
-ani.from(".nav-buttons", {
   opacity: 0,
   duration: 1,
 });
